@@ -90,19 +90,15 @@ if (contactForm) {
             return;
         }
         
-        // Simulate form submission
-        const submitBtn = this.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = '전송 중...';
-        submitBtn.disabled = true;
+        // 메일 제목 및 본문 생성
+        const subject = encodeURIComponent(`[문의] ${data.company} - ${data.solution}`);
+        const body = encodeURIComponent(
+            `회사명: ${data.company}\n담당자명: ${data.name}\n이메일: ${data.email}\n관심 솔루션: ${data.solution}\n\n문의 내용:\n${data[""] || data.message || ''}`
+        );
+        const mailto = `mailto:ckh@mobiligent.io?subject=${subject}&body=${body}`;
         
-        // Simulate API call
-        setTimeout(() => {
-            alert('문의가 성공적으로 전송되었습니다. 빠른 시일 내에 연락드리겠습니다.');
-            this.reset();
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-        }, 2000);
+        // 메일 클라이언트 열기
+        window.location.href = mailto;
     });
 }
 
