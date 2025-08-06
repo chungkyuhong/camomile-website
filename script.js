@@ -93,7 +93,7 @@ if (contactForm) {
         // 메일 제목 및 본문 생성
         const subject = encodeURIComponent(`[문의] ${data.company} - ${data.solution}`);
         const body = encodeURIComponent(
-            `회사명: ${data.company}\n담당자명: ${data.name}\n이메일: ${data.email}\n관심 솔루션: ${data.solution}\n\n문의 내용:\n${data[""] || data.message || ''}`
+            `회사명: ${data.company}\n담당자명: ${data.name}\n이메일: ${data.email}\n관심 솔루션: ${data.solution}\n\n문의 내용:\n${data.message || '문의 내용이 없습니다.'}`
         );
         const mailto = `mailto:ckh@mobiligent.io?subject=${subject}&body=${body}`;
         
