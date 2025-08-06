@@ -5,6 +5,13 @@ const navMenu = document.querySelector('.nav-menu');
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
+    
+    // Prevent body scroll when menu is open
+    if (navMenu.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = 'auto';
+    }
 });
 
 // Close mobile menu when clicking on a link
@@ -12,8 +19,28 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
     });
 });
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Add touch support for mobile
+if ('ontouchstart' in window) {
+    // Remove hover effects on touch devices
+    document.querySelectorAll('.solution-card, .app-box, .contact-item').forEach(element => {
+        element.addEventListener('touchstart', function() {
+            this.style.transform = 'none';
+        });
+    });
+}
 
 // Navbar scroll effect
 window.addEventListener('scroll', () => {
