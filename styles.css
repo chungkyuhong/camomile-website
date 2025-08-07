@@ -219,257 +219,88 @@ body {
 
 /* Floating Cards Animation */
 .hero-image {
-    position: relative;
-    height: 400px;
-}
-
-.floating-cards {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.card {
-    position: absolute;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    padding: 1rem;
-    font-weight: 600;
-    color: white;
-    animation: float 6s ease-in-out infinite;
-}
-
-.card-1 { top: 10%; left: 10%; animation-delay: 0s; }
-.card-2 { top: 20%; right: 20%; animation-delay: 1s; }
-.card-3 { bottom: 30%; left: 20%; animation-delay: 2s; }
-.card-4 { bottom: 20%; right: 10%; animation-delay: 3s; }
-.card-5 { top: 50%; left: 50%; animation-delay: 4s; }
-
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-}
-
-/* Business Flow Diagram */
-.business-flow-diagram {
-    position: relative;
-    width: 100%;
-    height: 100%;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    margin-top: 2rem;
+}
+
+.platform-diagram {
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.flow-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-    max-width: 600px;
-    margin-bottom: 20px;
-    position: relative;
-}
-
-.flow-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    color: white;
-    position: relative;
-}
-
-.flow-section h3 {
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-    opacity: 0.9;
-}
-
-/* Customers Section */
-.customers-section {
-    flex: 1;
-}
-
-.customers-icon {
-    width: 60px;
-    height: 60px;
-    position: relative;
-    margin-bottom: 15px;
-}
-
-.customer-group {
-    position: relative;
+.platform-diagram svg {
     width: 100%;
     height: 100%;
+    filter: drop-shadow(0 10px 30px rgba(102, 126, 234, 0.2));
 }
 
-.customer {
-    position: absolute;
-    width: 20px;
-    height: 30px;
-    background: #4ade80;
-    border: 2px solid #166534;
-    border-radius: 50% 50% 0 0;
-}
-
-.customer-1 {
-    top: 5px;
-    left: 5px;
-    transform: scale(0.8);
-}
-
-.customer-2 {
-    top: 10px;
-    left: 20px;
-    transform: scale(0.9);
-}
-
-.customer-3 {
-    top: 15px;
-    left: 35px;
-    transform: scale(1);
-}
-
-.flow-line {
-    width: 2px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.3);
-    margin-top: 10px;
-}
-
-/* Applications Section */
-.applications-section {
-    flex: 2;
-    margin: 0 20px;
-}
-
-.applications-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    margin-bottom: 15px;
-}
-
-.app-box {
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 8px;
-    padding: 8px 12px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: white;
-    text-align: center;
+.platform-diagram svg rect {
     transition: all 0.3s ease;
 }
 
-.app-box:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
+.platform-diagram svg rect:hover {
+    opacity: 1 !important;
+    transform: scale(1.02);
 }
 
-.flow-arrows {
-    position: relative;
+.platform-diagram svg text {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    pointer-events: none;
+}
+
+.floating-elements circle {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Platform Diagram - SVG based */
+.platform-diagram {
     width: 100%;
-    height: 20px;
-}
-
-.arrow {
-    position: absolute;
-    width: 20px;
-    height: 2px;
-    background: rgba(255, 255, 255, 0.5);
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.arrow::after {
-    content: '';
-    position: absolute;
-    right: -5px;
-    top: -3px;
-    width: 0;
-    height: 0;
-    border-left: 8px solid rgba(255, 255, 255, 0.5);
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid transparent;
-}
-
-.arrow-1 { left: 10%; }
-.arrow-2 { left: 30%; }
-.arrow-3 { left: 50%; }
-.arrow-4 { left: 70%; }
-
-/* Platform Section */
-.platform-section {
-    flex: 1;
-}
-
-.platform-icon {
-    width: 80px;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    padding: 10px;
-    margin-bottom: 15px;
+    max-width: 500px;
+    height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.platform-lines {
+.platform-diagram svg {
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    filter: drop-shadow(0 10px 30px rgba(102, 126, 234, 0.2));
 }
 
-.line {
-    height: 3px;
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 2px;
+.platform-diagram svg rect {
+    transition: all 0.3s ease;
 }
 
-.line-1, .line-2, .line-3 { width: 100%; }
-.line-4 { width: 60%; }
-
-.flow-curve {
-    width: 2px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.3);
-    margin-top: 10px;
-    position: relative;
+.platform-diagram svg rect:hover {
+    opacity: 1 !important;
+    transform: scale(1.02);
 }
 
-.flow-curve::after {
-    content: '';
-    position: absolute;
-    bottom: -20px;
-    left: -10px;
-    width: 20px;
-    height: 20px;
-    border-right: 2px solid rgba(255, 255, 255, 0.3);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 0 0 20px 0;
+.platform-diagram svg text {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    pointer-events: none;
 }
 
-/* Business Base */
-.business-base {
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 15px;
-    padding: 15px 30px;
-    text-align: center;
-    color: white;
-    font-weight: 600;
-    font-size: 1.1rem;
-    backdrop-filter: blur(10px);
-    animation: pulse 3s ease-in-out infinite;
+.floating-elements circle {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
 }
 
 @keyframes pulse {
@@ -934,45 +765,13 @@ body {
         margin-top: 1rem;
     }
     
-    .business-flow-diagram {
-        height: 100%;
-        justify-content: center;
+    .platform-diagram {
+        max-width: 400px;
+        height: 250px;
     }
     
-    .flow-container {
-        flex-direction: column;
-        gap: 15px;
-        max-width: 280px;
-        margin: 0 auto;
-    }
-    
-    .applications-section {
-        margin: 0;
-    }
-    
-    .applications-grid {
-        grid-template-columns: 1fr;
-        gap: 5px;
-    }
-    
-    .app-box {
-        font-size: 0.65rem;
-        padding: 5px 8px;
-        min-height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .flow-section h3 {
-        font-size: 0.75rem;
-        margin-bottom: 8px;
-    }
-    
-    .business-base {
-        font-size: 0.9rem;
-        padding: 10px 15px;
-        margin-top: 10px;
+    .platform-diagram svg {
+        filter: drop-shadow(0 5px 15px rgba(102, 126, 234, 0.15));
     }
     
     .solutions-grid {
@@ -1063,25 +862,13 @@ body {
         height: 250px;
     }
     
-    .flow-container {
-        max-width: 250px;
-        gap: 12px;
+    .platform-diagram {
+        max-width: 320px;
+        height: 200px;
     }
     
-    .app-box {
-        font-size: 0.6rem;
-        padding: 4px 6px;
-        min-height: 25px;
-    }
-    
-    .flow-section h3 {
-        font-size: 0.7rem;
-        margin-bottom: 6px;
-    }
-    
-    .business-base {
-        font-size: 0.8rem;
-        padding: 8px 12px;
+    .platform-diagram svg {
+        filter: drop-shadow(0 3px 10px rgba(102, 126, 234, 0.1));
     }
     
     .btn {
