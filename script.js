@@ -343,4 +343,16 @@ function goToFamilySite(url) {
         // Reset select to default option
         document.getElementById('family-site-select').value = '';
     }
-} 
+}
+
+// Logo click to home
+document.addEventListener('DOMContentLoaded', () => {
+    const logo = document.querySelector('.nav-logo');
+    if (logo) {
+        logo.addEventListener('click', () => {
+            document.querySelector('#home').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    }
+}); 
