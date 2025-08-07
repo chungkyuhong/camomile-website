@@ -334,4 +334,13 @@ style.textContent = `
         }
     }
 `;
-document.head.appendChild(style); 
+document.head.appendChild(style);
+
+// Family site navigation function
+function goToFamilySite(url) {
+    if (url) {
+        window.open(url, '_blank');
+        // Reset select to default option
+        document.getElementById('family-site-select').value = '';
+    }
+} 

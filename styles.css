@@ -783,6 +783,49 @@ body {
     color: #999;
 }
 
+.family-sites {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.family-sites label {
+    font-size: 0.8rem;
+    color: #999;
+    margin-bottom: 0.25rem;
+}
+
+.family-sites select {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    color: #999;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 200px;
+}
+
+.family-sites select:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #555;
+}
+
+.family-sites select:focus {
+    outline: none;
+    border-color: #667eea;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.family-sites select option {
+    background: #1a1a1a;
+    color: #999;
+    padding: 0.5rem;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hamburger {
@@ -1029,6 +1072,17 @@ body {
     
     .footer-bottom p {
         font-size: 0.7rem;
+    }
+    
+    /* Family sites mobile */
+    .family-sites {
+        margin-top: 0.8rem;
+    }
+    
+    .family-sites select {
+        min-width: 180px;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
     }
 }
 
